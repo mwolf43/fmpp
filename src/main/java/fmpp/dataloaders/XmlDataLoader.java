@@ -258,9 +258,9 @@ public class XmlDataLoader implements DataLoader {
     }
     
     /**
-     * Checks if the string is a valid <tt>xml</tt> data loader option name.
+     * Checks if the string is a valid <code>xml</code> data loader option name.
      * Options names are the keys in the hash pased as the 2nd argument to the
-     * <tt>xml</tt> data loader.
+     * <code>xml</code> data loader.
      */
     public static boolean isOptionName(String optionName) {
         return OPTION_NAMES.contains(optionName);

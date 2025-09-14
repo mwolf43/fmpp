@@ -74,7 +74,7 @@ import freemarker.template.utility.NullArgumentException;
  * that require <code>String</code> value(s) instead of <code>Object</code>(s).
  * These methods should be used when you get the setting values from text-only
  * sources, such as command-line option values, XML attributes or
- * <tt>.properties</tt> file. To demonstrate the difference, assume you have
+ * <code>.properties</code> file. To demonstrate the difference, assume you have
  * string value <code>"a, b, c"</code>. If you try to use this value for a
  * setting of type list, the normal setter method will interpret the value
  * as a list of length 1, that stores string <code>"a, b, c"</code>. If you
@@ -380,9 +380,9 @@ public class Settings {
      * <p>String input: TDD expression starting in list mode. If the result is
      *     a list that contains a single list, then the contained list will
      *     be used. This heuristic is used to fix this user mistake:<br>
-     *     <tt>--some-list="[a, b, c]"</tt><br>
+     *     <code>--some-list="[a, b, c]"</code><br>
      *     instead of:<br>
-     *     <tt>--some-list="a, b, c"</tt>
+     *     <code>--some-list="a, b, c"</code>
      * <p>Merging: the two lists are concatenated, with the default (inherited)
      *    value coming last.
      */
@@ -392,12 +392,12 @@ public class Settings {
      * Local data model setting type.
      * This is the same as {@link #TYPE_SEQUENCE}, just if the value is given as
      * text (string input), it defers the evaluation of the hash parameter of
-     * the <tt>case</tt> function call, and stores that as
+     * the <code>case</code> function call, and stores that as
      * {@link fmpp.tdd.Fragment}. This is required because that hash parameter
      * may uses data loaders, which shouldn't be executed until almost all
      * settings of the {@link fmpp.Engine} are set. This also means that if
      * you set the setting value with Java, the last parameter to the
-     * <tt>case</tt> {@link fmpp.tdd.FunctionCall} must be a
+     * <code>case</code> {@link fmpp.tdd.FunctionCall} must be a
      * {@link fmpp.tdd.Fragment} instead of <code>Map</code>, if you want to use
      * data loaders in it. 
      */
@@ -1129,8 +1129,8 @@ public class Settings {
     
     /**
      * Loads settings from a configuration file. The file will be interpreted
-     * as legacy properties file if its extension is <tt>cfg</tt> or
-     * <tt>properties</tt>, otherwise it will be interpreted as TDD file.
+     * as legacy properties file if its extension is <code>cfg</code> or
+     * <code>properties</code>, otherwise it will be interpreted as TDD file.
      * The settings stored in the configuration file will be added
      * to the this object with {@link #add(Map)}.
      * 
@@ -2473,7 +2473,7 @@ public class Settings {
 
     /**
      * Converts mixed-case setting name to dashed form,
-     * like <tt>sourceRoot</tt> to <tt>source-root</tt>.
+     * like <code>sourceRoot</code> to <code>source-root</code>.
      */
     public static String getDashedName(String name) {
         int ln = name.length();

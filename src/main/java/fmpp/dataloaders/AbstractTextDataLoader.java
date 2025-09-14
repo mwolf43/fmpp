@@ -67,7 +67,7 @@ public abstract class AbstractTextDataLoader extends FileDataLoader {
      * @return the encoding given with the extra arguments, or
      *     <code>null</code> if the encoding was not specified. In the latest
      *     case the encoding will default to the source encoding engine
-     *     parameter (the <tt>sourceEncoding</tt> setting).
+     *     parameter (the <code>sourceEncoding</code> setting).
      */
     protected abstract String parseExtraArguments(List args) throws Exception;
     

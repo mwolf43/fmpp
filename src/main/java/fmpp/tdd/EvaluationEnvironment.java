@@ -109,10 +109,10 @@ public interface EvaluationEnvironment {
      *            of the <i>value</i> of the key:<i>value</i> pair.
      *        <li>{@link #EVENT_ENTER_SEQUENCE}, {@link #EVENT_ENTER_HASH}, and
      *            {@link #EVENT_ENTER_FUNCTION_PARAMS}: points the first
-     *            character after the <tt>[</tt> and <tt>(</tt> respectively.  
+     *            character after the <code>[</code> and <code>(</code> respectively.  
      *        <li>{@link #EVENT_LEAVE_SEQUENCE}, {@link #EVENT_LEAVE_HASH}, and
      *            {@link #EVENT_LEAVE_FUNCTION_PARAMS}: points the
-     *            terminating character, that is, the <tt>]</tt> or <tt>)</tt>
+     *            terminating character, that is, the <code>]</code> or <code>)</code>
      *            or the character after the end of the string.
      *      </ul>  
      * @param name For {@link #EVENT_ENTER_HASH_KEY} and
@@ -146,8 +146,8 @@ public interface EvaluationEnvironment {
      *                {@link #RETURN_FRAGMENT} has no effect. 
      *          </ul>
      *       <li>
-     *       <li>{@link #EVENT_ENTER_HASH} if the hash uses <tt>{</tt> and
-     *           <tt>}</tt>):
+     *       <li>{@link #EVENT_ENTER_HASH} if the hash uses <code>{</code> and
+     *           <code>}</code>):
      *          <ul>
      *            <li>{@link #RETURN_FRAGMENT}: The value of the hash will be
      *                the {@link Fragment} that stores the hash expression.

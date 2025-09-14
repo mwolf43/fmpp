@@ -235,8 +235,8 @@ public class Interpreter {
      * @param ee the {@link EvaluationEnvironment} used to resolve function
      *    calls. If it is <code>null</code> then
      *    {@link #SIMPLE_EVALUATION_ENVIRONMENT} will be used.
-     * @param forceStringValues specifies if expressions as <tt>true</tt> and
-     *    <tt>123</tt> should be interpreted as strings, or as boolean and
+     * @param forceStringValues specifies if expressions as <code>true</code> and
+     *    <code>123</code> should be interpreted as strings, or as boolean and
      *    number respectively.
      * @param fileName the path of the source file, or other description of the
      *    source. It is used for informative purposes only, as in error
@@ -311,8 +311,8 @@ public class Interpreter {
      * @param ee the {@link EvaluationEnvironment} used to resolve function
      *    calls. If it is <code>null</code> then
      *    {@link #SIMPLE_EVALUATION_ENVIRONMENT} will be used.
-     * @param forceStringValues specifies if expressions as <tt>true</tt> and
-     *    <tt>123</tt> should be interpreted as strings, or as boolean and
+     * @param forceStringValues specifies if expressions as <code>true</code> and
+     *    <code>123</code> should be interpreted as strings, or as boolean and
      *    number respectively.
      * @param fileName the path of the source file, or other description of the
      *    source. It is used for informative purposes only, as in error
@@ -375,8 +375,8 @@ public class Interpreter {
      * @param ee the {@link EvaluationEnvironment} used to resolve function
      *    calls. If it is <code>null</code> then
      *    {@link #SIMPLE_EVALUATION_ENVIRONMENT} will be used.
-     * @param forceStringValues specifies if expressions as <tt>true</tt> and
-     *    <tt>123</tt> should be interpreted as strings, or as boolean and
+     * @param forceStringValues specifies if expressions as <code>true</code> and
+     *    <code>123</code> should be interpreted as strings, or as boolean and
      *    number respectively.
      * @param fileName the path of the source file, or other description of the
      *    source. It is used for informative purposes only, as in error
@@ -434,7 +434,7 @@ public class Interpreter {
     }
 
     /**
-     * Loads a TDD file with utilizing <tt>#encoding:<i>enc</i></tt> header.
+     * Loads a TDD file with utilizing <code>#encoding:<i>enc</i></code> header.
      * If the header is missing, the encoding given as parameter is used.
      * 
      * @param in the stream that reads the content of the file.
@@ -446,7 +446,7 @@ public class Interpreter {
     }
 
     /**
-     * Loads a TDD file with utilizing <tt>#encoding:<i>enc</i></tt> header.
+     * Loads a TDD file with utilizing <code>#encoding:<i>enc</i></code> header.
      * If the header is missing, the encoding given as parameter is used.
      * 
      * @param b the content of the file.

@@ -53,12 +53,12 @@ import freemarker.template.TemplateSequenceModel;
  * <p>The values in the table will be always exposed as string variables, unless
  * you specify an other type in the header cell directly. This can be done
  * by using colon + a type identifier at the end of the header cell. The type
- * indetifier can be: <code>n</code> or <code>number</code>, <code>b</code> or
+ * identifier can be: <code>n</code> or <code>number</code>, <code>b</code> or
  * <code>boolean</code>, <code>d</code> or <code>date</code>,
  * <code>t</code> or <code>time</code>, <code>dt</code> or
  * <code>dateTime</code>, <code>s</code> or <code>string</code>. For example, if
  * the value of a header cell in the CSV file is "price:n", then the values of
- * the cell will be exposed as numberical variables, not string.
+ * the cell will be exposed as numerical variables, not string.
  * 
  * <p><code>CsvSequence</code> is also a hash that contains one key:
  * <code>headers</code>. This is a sequence that stores the header names.
@@ -557,22 +557,22 @@ public class CsvSequence implements
      * Specifies if the header names coming from the file will be normalized
      * or should be left as is. Normalization means:
      * <ol>
-     *   <li>Remove the part between the first <tt>"("</tt> and last
-     *       <tt>")"</tt>, before the header is parsed for column type
-     *       identifier (like <tt>":n"</tt>).
+     *   <li>Remove the part between the first <code>"("</code> and last
+     *       <code>")"</code>, before the header is parsed for column type
+     *       identifier (like <code>":n"</code>).
      *   <li>After the type identifier was extracted and removed (if there was
      *       any), the cell value is trimmed. (Trimming happens even if
      *       header normalization is off.)
      *   <li>Then it's converted to lower case.
-     *   <li>Then the following characters are replaced with <tt>"_"</tt>:
-     *       space, comma, semicolon, colon. <li>Then all <tt>"__"</tt>
-     *       and <tt>"___"</tt> and so on is replaced with a single
-     *       <tt>"_"</tt>.
+     *   <li>Then the following characters are replaced with <code>"_"</code>:
+     *       space, comma, semicolon, colon. <li>Then all <code>"__"</code>
+     *       and <code>"___"</code> and so on is replaced with a single
+     *       <code>"_"</code>.
      * </ol>
      * 
-     * For example,  <tt>"Price, old (category: A, B, F): n"</tt> will be
-     * normailzed to <tt>"price_old"</tt>, and the type identifier will be
-     * <tt>n</tt>. 
+     * For example,  <code>"Price, old (category: A, B, F): n"</code> will be
+     * normailzed to <code>"price_old"</code>, and the type identifier will be
+     * <code>n</code>. 
      */
     public void setNormalizeHeaders(boolean normalizeHeaders) {
         this.normalizeHeaders = normalizeHeaders;
@@ -687,7 +687,7 @@ public class CsvSequence implements
     /**
      * Sets the alternative symbol used for the decimal dot in
      * the file for numbers. Note that dot will be always assumed as
-     * decimal separator, except if <tt>groupingSeparator</tt> is set to dot.
+     * decimal separator, except if <code>groupingSeparator</code> is set to dot.
      */
     public void setDecimalSeparator(char decimalSeparator) {
         this.decimalSeparator = decimalSeparator;
@@ -711,7 +711,7 @@ public class CsvSequence implements
     }
 
     /**
-     * Separator char between cloumns. Defaults to semi-colon (<tt>;</tt>).
+     * Separator char between columns. Defaults to semi-colon (<code>;</code>).
      */
     public void setSeparator(char separator) {
         this.separator = separator;

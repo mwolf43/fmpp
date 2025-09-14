@@ -92,7 +92,8 @@ import java.util.Set;
  * </pre>
  * 
  * <p>This defines the following options:</p>
- * <table border=1 summary="Example options declared">
+ * <table border=1>
+ *   <caption>Example options declared</caption>
  *   <tr><th>short-name<th>long-name<th>argument?
  *   <tr><td>a<td>all<td>no
  *   <tr><td>A<td>almost-all<td>no
@@ -106,7 +107,8 @@ import java.util.Set;
  * 
  * <p>The resulting properties will be:</p>
  * 
- * <table border=1 summary="Example options result Properties">
+ * <table border=1>
+ *   <caption>Example options result Properties</caption>
  *   <tr><th>name<th>value
  *   <tr><td>all<td>""
  *   <tr><td>l<td>""

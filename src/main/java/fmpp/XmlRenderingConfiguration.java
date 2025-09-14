@@ -139,7 +139,7 @@ public class XmlRenderingConfiguration {
      * (accepts XML documents regardels of their source file path).
      * 
      * @param pathPattern the path pattern of the source root relative path of
-     *     the XML file. It doesn't mater if it starts with <tt>/</tt> or not.
+     *     the XML file. It doesn't mater if it starts with <code>/</code> or not.
      */
     public void addSourcePathPattern(String pathPattern) {
         this.pathPatterns.add(pathPattern);
@@ -154,9 +154,9 @@ public class XmlRenderingConfiguration {
     }
 
     /**
-     * Adds or replaces an option in the map of <tt>xml</tt> data loader
+     * Adds or replaces an option in the map of <code>xml</code> data loader
      * options.
-     * The set of valid values are specified by the <tt>xml</tt> data loader
+     * The set of valid values are specified by the <code>xml</code> data loader
      * (see in the FMPP Manual), and they will not be validated until the data
      * loader is actually invoked, so when the processing of the XML file
      * starts. The only exception from this rule is the
@@ -176,7 +176,7 @@ public class XmlRenderingConfiguration {
     }
     
     /**
-     * Removes all <tt>xml</tt> data loader options. 
+     * Removes all <code>xml</code> data loader options. 
      */
     public void clearXmlDataLoaderOptions() {
         xmlDataLoaderOptions.clear();

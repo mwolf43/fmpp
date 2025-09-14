@@ -214,7 +214,7 @@ public class BshLocalDataBuilder implements LocalDataBuilder {
 
     /**
      * Sets the encoding of the script files. If it is <code>null</code> then
-     * the value of the <tt>sourceEncoding</tt> setting will be used. 
+     * the value of the <code>sourceEncoding</code> setting will be used. 
      */
     public void setEncoding(String encoding) {
         this.encoding = encoding;

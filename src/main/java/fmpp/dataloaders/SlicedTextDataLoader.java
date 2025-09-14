@@ -131,7 +131,7 @@ public class SlicedTextDataLoader extends AbstractTextDataLoader {
      * Override this if you want to post-process the items.
      * 
      * @param items the list of <code>String</code>-s that the standard
-     *     <tt>slicedText</tt> data loader would return.
+     *     <code>slicedText</code> data loader would return.
      * 
      * @return the final return value of the custom data loader.
      */

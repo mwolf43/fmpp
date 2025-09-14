@@ -22,7 +22,7 @@ import fmpp.tdd.DataLoaderEvaluationEnvironment;
 import fmpp.tdd.Interpreter;
 
 /**
- * Creates a <tt>List</tt> based on a TDD file. The TDD file must contain a
+ * Creates a <code>List</code> based on a TDD file. The TDD file must contain a
  * TDD sequence such as:<br>
  * <code>"Big Joe", 1, [11, 22, 33], properties(foo.properties)</code> 
  */

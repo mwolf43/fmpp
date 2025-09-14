@@ -23,7 +23,7 @@ import java.io.PrintWriter;
  * <code>RuntimeException</code> that emulates J2SE 1.4+ cause-chains if it runs
  * on earlier versions. Furthermore, in FMPP error messages, the message of this
  * exception is trusted (i.e. no need to print the class name), as it is inside
- * an <tt>fmpp.*</tt> package.
+ * an <code>fmpp.*</code> package.
  */
 public class RuntimeExceptionCC extends RuntimeException {
     private Throwable cause;

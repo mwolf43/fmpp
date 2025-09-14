@@ -91,7 +91,7 @@ public class DataLoaderEvaluationEnvironment implements EvaluationEnvironment {
     }
 
     /**
-     * Override this to help TDD <tt>get</tt> function to find top level
+     * Override this to help TDD <code>get</code> function to find top level
      * variables. The default implementation finds top-level variables already
      * created in the executing TDD expression, and then it tries to get the
      * variable with {@link Engine#getData(String)}.

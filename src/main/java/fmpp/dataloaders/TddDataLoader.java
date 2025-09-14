@@ -22,7 +22,7 @@ import fmpp.tdd.DataLoaderEvaluationEnvironment;
 import fmpp.tdd.Interpreter;
 
 /**
- * Creates a <tt>Map</tt> based on a TDD file. The TDD file must contain a hash
+ * Creates a <code>Map</code> based on a TDD file. The TDD file must contain a hash
  * or a hash addition such as:<br>
  * <code>foo:123, bar:456, properties(baaz.properties)</code> 
  */

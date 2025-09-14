@@ -32,9 +32,9 @@ import fmpp.tdd.Interpreter;
  * session, to be reused for all subsequent {@link fmpp.LocalDataBuilder#build}
  * invokations.
  * 
- * <p>This local data builder is what <tt>localData</tt> setting uses, when the
- * last parameter to the <tt>case</tt> function is a hash, e.g.:<br>
- * <tt>localData: [case(sub/, {bgColor:green, doc:xml(data/foo.xml)})]</tt>.
+ * <p>This local data builder is what <code>localData</code> setting uses, when the
+ * last parameter to the <code>case</code> function is a hash, e.g.:<br>
+ * <code>localData: [case(sub/, {bgColor:green, doc:xml(data/foo.xml)})]</code>.
  */
 public class TddHashLocalDataBuilder extends CachingLocalDataBuilder {
     final Fragment fragment;
