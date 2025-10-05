@@ -35,7 +35,7 @@ class FmppFileOutputWriter extends FmppOutputWriter {
     private static final int BUFFER_SIZE = 160; // large buffer slows down
     
     private Engine engine;
-    private ArrayList stateStack = new ArrayList();
+    private ArrayList<SavedState> stateStack = new ArrayList<>();
     private boolean closed = false;
     private boolean ignoreFlush = false;
     
@@ -127,7 +127,7 @@ class FmppFileOutputWriter extends FmppOutputWriter {
             } while (true);
         } finally {
             // Final attempt to release resources
-            Iterator it = stateStack.iterator();
+            Iterator<SavedState> it = stateStack.iterator();
             while (it.hasNext()) {
                 SavedState s = (SavedState) it.next();
                 try {
@@ -149,9 +149,9 @@ class FmppFileOutputWriter extends FmppOutputWriter {
     void dropOutputFile() throws IOException {
         if (fileWriter != null) {
             fileWriter.close();
-            if (dst.isFile()) {
-                dst.delete();
-            }
+        }
+        if (dst.isFile()) {
+            dst.delete();
         }
         fileWriter = NullWriter.INSTANCE;
         buf = null; 
