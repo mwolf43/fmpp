@@ -207,17 +207,17 @@ public class JSONParser {
             
             if (bd.compareTo(MIN_INT_AS_BIGDECIMAL) >= 0 && bd.compareTo(MAX_INT_AS_BIGDECIMAL) <= 0) {
                 if (NumberUtil.isIntegerBigDecimal(bd)) {
-                    return new Integer(bd.intValue());
+                    return Integer.valueOf(bd.intValue());
                 }
             } else if (bd.compareTo(MIN_LONG_AS_BIGDECIMAL) >= 0 && bd.compareTo(MAX_LONG_AS_BIGDECIMAL) <= 0) {
                 if (NumberUtil.isIntegerBigDecimal(bd)) {
-                    return new Long(bd.longValue());
+                    return Long.valueOf(bd.longValue());
                 }
             }
             return bd;
         } else {
             return longSum <= Integer.MAX_VALUE && longSum >= Integer.MIN_VALUE
-                    ? (Number) new Integer((int) longSum) : new Long(longSum);
+                    ? (Number) Integer.valueOf((int) longSum) : Long.valueOf(longSum);
         }
     }
 

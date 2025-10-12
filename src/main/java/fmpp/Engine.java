@@ -444,7 +444,7 @@ public class Engine {
                     || fmIncompImprovements.intValue() < Configuration.VERSION_2_3_21.intValue()) {
                 // The old (deprecated) way:
                 BeansWrapper bw = fmIncompImprovements != null
-                        ? new BeansWrapper(fmIncompImprovements) : new BeansWrapper();
+                        ? new BeansWrapper(fmIncompImprovements) : new BeansWrapper(Configuration.DEFAULT_INCOMPATIBLE_IMPROVEMENTS);
                 bw.setSimpleMapWrapper(true);
                 objectWrapper = bw;
             } else {
@@ -2353,7 +2353,7 @@ public class Engine {
      */
     public void addData(String name, byte value) {
         checkParameterLock();
-        data.put(name, new Byte(value));
+        data.put(name, value);
     }
 
     /**
@@ -2362,7 +2362,7 @@ public class Engine {
      */
     public void addData(String name, short value) {
         checkParameterLock();
-        data.put(name, new Short(value));
+        data.put(name, value);
     }
 
     /**
@@ -2371,7 +2371,7 @@ public class Engine {
      */
     public void addData(String name, int value) {
         checkParameterLock();
-        data.put(name, new Integer(value));
+        data.put(name, value);
     }
 
     /**
@@ -2380,7 +2380,7 @@ public class Engine {
      */
     public void addData(String name, long value) {
         checkParameterLock();
-        data.put(name, new Long(value));
+        data.put(name, value);
     }
 
     /**
@@ -2389,7 +2389,7 @@ public class Engine {
      */
     public void addData(String name, float value) {
         checkParameterLock();
-        data.put(name, new Float(value));
+        data.put(name, value);
     }
 
     /**
@@ -2398,7 +2398,7 @@ public class Engine {
      */
     public void addData(String name, double value) {
         checkParameterLock();
-        data.put(name, new Double(value));
+        data.put(name, value);
     }
 
     /**
@@ -2407,7 +2407,7 @@ public class Engine {
      */
     public void addData(String name, char value) {
         checkParameterLock();
-        data.put(name, new Character(value));
+        data.put(name, value);
     }
 
     /**

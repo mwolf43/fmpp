@@ -386,9 +386,9 @@ public class CsvSequence implements
                     s = StringUtil.replace(s, "__", "_");
                 }
             }
-            nameToCol.put(s, new Integer(colCount));
+            nameToCol.put(s, Integer.valueOf(colCount));
             keyList.add(new SimpleScalar(s));
-            headerTypes.add(new Integer(type));
+            headerTypes.add(type);
             colCount++;
         }
         

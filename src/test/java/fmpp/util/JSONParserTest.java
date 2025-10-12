@@ -9,11 +9,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import junit.framework.TestCase;
 import fmpp.models.JSONNode;
 import freemarker.template.TemplateModelException;
 import freemarker.template.TemplateNodeModel;
 import freemarker.template.TemplateSequenceModel;
+import junit.framework.TestCase;
 
 public class JSONParserTest extends TestCase {
 
@@ -78,22 +78,22 @@ public class JSONParserTest extends TestCase {
     }
     
     public void testPlainWholeNumbers() throws JSONParseException {
-        assertJSONEquals(new Integer(0), "0");
-        assertJSONEquals(new Integer(1), "1");
-        assertJSONEquals(new Integer(10), "10");
-        assertJSONEquals(new Integer(9999001), "9999001");
-        assertJSONEquals(new Integer(Integer.MAX_VALUE), "" + Integer.MAX_VALUE);
+        assertJSONEquals(0, "0");
+        assertJSONEquals(1, "1");
+        assertJSONEquals(10, "10");
+        assertJSONEquals(9999001, "9999001");
+        assertJSONEquals(Integer.MAX_VALUE, "" + Integer.MAX_VALUE);
         
-        assertJSONEquals(new Integer(0), "-0");
-        assertJSONEquals(new Integer(-1), "-1");
-        assertJSONEquals(new Integer(-10), "-10");
-        assertJSONEquals(new Integer(-9999001), "-9999001");
-        assertJSONEquals(new Integer(Integer.MIN_VALUE), "" + Integer.MIN_VALUE);
+        assertJSONEquals(0, "-0");
+        assertJSONEquals(-1, "-1");
+        assertJSONEquals(-10, "-10");
+        assertJSONEquals(-9999001, "-9999001");
+        assertJSONEquals(Integer.MIN_VALUE, "" + Integer.MIN_VALUE);
         
-        assertJSONEquals(new Long(Integer.MAX_VALUE + 1L), "" + (Integer.MAX_VALUE + 1L));
-        assertJSONEquals(new Long(Integer.MIN_VALUE - 1L), "" + (Integer.MIN_VALUE - 1L));
-        assertJSONEquals(new Long(Long.MAX_VALUE), "" + Long.MAX_VALUE);
-        assertJSONEquals(new Long(Long.MIN_VALUE), "" + Long.MIN_VALUE);
+        assertJSONEquals(Integer.MAX_VALUE + 1L, "" + (Integer.MAX_VALUE + 1L));
+        assertJSONEquals(Integer.MIN_VALUE - 1L, "" + (Integer.MIN_VALUE - 1L));
+        assertJSONEquals(Long.MAX_VALUE, "" + Long.MAX_VALUE);
+        assertJSONEquals(Long.MIN_VALUE, "" + Long.MIN_VALUE);
         
         assertJSONEquals(new BigDecimal("9223372036854775808"), "9223372036854775808");
         assertJSONEquals(new BigDecimal("-9223372036854775809"), "-9223372036854775809");
@@ -102,8 +102,8 @@ public class JSONParserTest extends TestCase {
     }
 
     public void testDecimalNumbers() throws JSONParseException {
-        assertJSONEquals(new Integer(0), "0.0");
-        assertJSONEquals(new Integer(0), "0.000");
+        assertJSONEquals(0, "0.0");
+        assertJSONEquals(0, "0.000");
         assertJSONEquals(new BigDecimal("0.1"), "0.1");
         assertJSONEquals(new BigDecimal("0.01"), "0.01");
         assertJSONEquals(new BigDecimal("0.001"), "0.001");
@@ -112,7 +112,7 @@ public class JSONParserTest extends TestCase {
         assertJSONEquals(new BigDecimal("2345.678"), "2345.678");
         assertJSONEquals(new BigDecimal("1234567890.1234567890"), "1234567890.1234567890");
         
-        assertJSONEquals(new Integer(0), "-0.0");
+        assertJSONEquals(0, "-0.0");
         assertJSONEquals(new BigDecimal("-0.1"), "-0.1");
         assertJSONEquals(new BigDecimal("-0.001"), "-0.001");
         assertJSONEquals(new BigDecimal("-2345.678"), "-2345.678");
@@ -122,41 +122,41 @@ public class JSONParserTest extends TestCase {
     }
 
     public void testENumbers() throws JSONParseException {
-        assertJSONEquals(new Integer(0), "0E0");
-        assertJSONEquals(new Integer(0), "0E-3");
-        assertJSONEquals(new Integer(0), "0E3");
-        assertJSONEquals(new Integer(0), "0E+3");
-        assertJSONEquals(new Integer(100), "1e2");
-        assertJSONEquals(new Integer(100), "1e002");
+        assertJSONEquals(0, "0E0");
+        assertJSONEquals(0, "0E-3");
+        assertJSONEquals(0, "0E3");
+        assertJSONEquals(0, "0E+3");
+        assertJSONEquals(100, "1e2");
+        assertJSONEquals(100, "1e002");
         assertJSONEquals(new BigDecimal("1.5e-2"), "1.5e-2");
-        assertJSONEquals(new Integer(150), "1.5e2");
-        assertJSONEquals(new Integer(150), "1.5e+2");
+        assertJSONEquals(150, "1.5e2");
+        assertJSONEquals(150, "1.5e+2");
         assertJSONEquals(new BigDecimal("1.5"), "1.5e-0");
         assertJSONEquals(new BigDecimal("1.5"), "1.5e+0");
         assertJSONEquals(new BigDecimal("1.5"), "1.5e0");
-        assertJSONEquals(new Long(10000000000L), "1E10");
-        assertJSONEquals(new Long(10567000000L), "1.0567E10");
-        assertJSONEquals(new Long(9223372036854775807L), "9223372036854775807E0");
-        assertJSONEquals(new Long(9223372036854775807L), "9223372036854775.807E3");
+        assertJSONEquals(10000000000L, "1E10");
+        assertJSONEquals(10567000000L, "1.0567E10");
+        assertJSONEquals(9223372036854775807L, "9223372036854775807E0");
+        assertJSONEquals(9223372036854775807L, "9223372036854775.807E3");
         assertJSONEquals(new BigDecimal("9223372036854775808"), "9223372036854775808E0");
         assertJSONEquals(new BigDecimal("9223372036854775808"), "9223372036854775.808E3");
         assertJSONEquals(new BigDecimal("3.14E1234567890"), "3.14E1234567890");
         
-        assertJSONEquals(new Integer(0), "-0E0");
-        assertJSONEquals(new Integer(0), "-0E-3");
-        assertJSONEquals(new Integer(0), "-0E3");
-        assertJSONEquals(new Integer(0), "-0E+3");
-        assertJSONEquals(new Integer(-100), "-1e2");
+        assertJSONEquals(0, "-0E0");
+        assertJSONEquals(0, "-0E-3");
+        assertJSONEquals(0, "-0E3");
+        assertJSONEquals(0, "-0E+3");
+        assertJSONEquals(-100, "-1e2");
         assertJSONEquals(new BigDecimal("-1.5e-2"), "-1.5e-2");
-        assertJSONEquals(new Integer(-150), "-1.5e2");
-        assertJSONEquals(new Integer(-150), "-1.5e+2");
+        assertJSONEquals(-150, "-1.5e2");
+        assertJSONEquals(-150, "-1.5e+2");
         assertJSONEquals(new BigDecimal("-1.5"), "-1.5e-0");
         assertJSONEquals(new BigDecimal("-1.5"), "-1.5e+0");
         assertJSONEquals(new BigDecimal("-1.5"), "-1.5e0");
-        assertJSONEquals(new Long(-10000000000L), "-1E10");
-        assertJSONEquals(new Long(-10567000000L), "-1.0567E10");
-        assertJSONEquals(new Long(-9223372036854775808L), "-9223372036854775808E0");
-        assertJSONEquals(new Long(-9223372036854775808L), "-9223372036854775.808E3");
+        assertJSONEquals(-10000000000L, "-1E10");
+        assertJSONEquals(-10567000000L, "-1.0567E10");
+        assertJSONEquals(-9223372036854775808L, "-9223372036854775808E0");
+        assertJSONEquals(-9223372036854775808L, "-9223372036854775.808E3");
         assertJSONEquals(new BigDecimal("-9223372036854775809"), "-9223372036854775809E0");
         assertJSONEquals(new BigDecimal("-9223372036854775809"), "-9223372036854775.809E3");
         assertJSONEquals(new BigDecimal("-3.14E1234567890"), "-3.14E1234567890");
@@ -185,11 +185,11 @@ public class JSONParserTest extends TestCase {
         assertJSONEquals(Collections.EMPTY_LIST, "[]");
         assertJSONEquals(Collections.EMPTY_LIST, "[ \r\n\t ]");
         
-        ArrayList list = new ArrayList();
-        list.add(new Integer(1));
+        ArrayList<Object> list = new ArrayList<>();
+        list.add(1);
         list.add("x");
         list.add(null);
-        list.add(new Integer(-140));
+        list.add(-140);
         list.add(Boolean.TRUE);
         assertJSONEquals(list, "[1, \"x\", null, -1.4e2, true]");
         assertJSONEquals(list, "[\n\t1,\"x\",null,-1.4e2,true\n]");
@@ -208,19 +208,19 @@ public class JSONParserTest extends TestCase {
         assertJSONEquals(Collections.EMPTY_MAP, "{}");
         assertJSONEquals(Collections.EMPTY_MAP, "{ \r\n\t }");
         
-        LinkedHashMap map = new LinkedHashMap();
-        map.put("a", new Integer(1));
+        LinkedHashMap<String, Object> map = new LinkedHashMap<>();
+        map.put("a", 1);
         map.put("k2", "x");
         map.put("ccc", null);
-        map.put("", new Integer(-140));
+        map.put("", -140);
         map.put("e", Boolean.TRUE);
         assertJSONEquals(map, "{\"a\":1,\"k2\":\"x\",\"ccc\":null,\"\":-1.4e2,\"e\":true}");
         assertJSONEquals(map, "{\n\t\"a\": 1, \"k2\" : \"x\" , \"ccc\"  :null  , \"\" : -1.4e2 , \"e\" :true\n}");
         
         // Source order must be kept:
-        Map jm = (Map) JSONParser.parse("{\"a\":\"1\", \"x\":\"2\", \"c\":\"3\", \"y\":\"4\"}", null);
-        assertEquals(Arrays.asList(new Object[] { "a", "x", "c", "y" }), new ArrayList(jm.keySet()));
-        assertEquals(Arrays.asList(new Object[] { "1", "2", "3", "4" }), new ArrayList(jm.values()));
+        Map<?, ?> jm = (Map<?,?>) JSONParser.parse("{\"a\":\"1\", \"x\":\"2\", \"c\":\"3\", \"y\":\"4\"}", null);
+        assertEquals(Arrays.asList(new Object[] { "a", "x", "c", "y" }), new ArrayList<Object>(jm.keySet()));
+        assertEquals(Arrays.asList(new Object[] { "1", "2", "3", "4" }), new ArrayList<Object>(jm.values()));
     }
 
     public void testMalformedObject() throws JSONParseException {
@@ -234,21 +234,21 @@ public class JSONParserTest extends TestCase {
     }
 
     public void testComposites1() throws JSONParseException {
-        Map subM = new HashMap();
-        subM.put("u", new Integer(100));
-        subM.put("v", new Integer(200));
+        Map<Object,Object> subM = new HashMap<>();
+        subM.put("u", 100);
+        subM.put("v", 200);
 
-        Map subM2 = new HashMap();
+        Map<Object,Object> subM2 = new HashMap<>();
         subM2.put("i", Arrays.asList(new Object[] { "i1", "i2" }));
         subM2.put("j", Arrays.asList(new Object[] { "j1", "j2" }));
         
-        Map rootM = new HashMap();
+        Map<Object,Object> rootM = new HashMap<>();
         rootM.put("a", new BigDecimal("0.5"));
         rootM.put("b", Arrays.asList(new Object[] {
-                new Integer(11),
+                11,
                 Arrays.asList(new Object[] { "x", "y" }),
                 Arrays.asList(new Object[] { "X", "Y" }),
-                new Integer(22),
+                22,
                 subM
         }));
         rootM.put("c", null);
@@ -274,9 +274,9 @@ public class JSONParserTest extends TestCase {
     }
     
     public void testComposites2() throws JSONParseException {
-        Map subM = new HashMap();
-        subM.put("u", new Integer(100));
-        subM.put("v", new Integer(200));
+        Map<Object, Object> subM = new HashMap<>();
+        subM.put("u", 100);
+        subM.put("v", 200);
         
         List list = Arrays.asList(new Object[] {
                 subM,
@@ -321,7 +321,7 @@ public class JSONParserTest extends TestCase {
         }
         
         {
-            Map m = new HashMap();
+            Map<Object, Object> m = new HashMap<>();
             m.put("a", "A");
             m.put("b", "B");
             m.put("c", "C");

@@ -15,6 +15,10 @@
 			<url>http://fmpp.sourceforge.net/license.html</url>
 		</license>
 	</licenses>
+	
+	<properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<build>
 		<resources>

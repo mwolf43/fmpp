@@ -177,7 +177,7 @@ public class CommandLine {
             // If not found by name, some heuristics to decide if the output of "mode con" has changed too much for
             // safe parsing.
             if (colsFoundByName || (rowsWithNumValue >= 4 && cols >= 20 && cols < 800)) {
-                return new Integer(cols);
+                return Integer.valueOf(cols);
             } else {
                 return null;
             }
@@ -675,7 +675,7 @@ public class CommandLine {
                     ops.getProperty(cln(Settings.NAME_COLUMNS)),
                     cln(Settings.NAME_COLUMNS));
             if (screenColsOr0 != 0) {
-                screenCols = new Integer(screenColsOr0);
+                screenCols = screenColsOr0;
             }
 
             // -----------------------------------------------------------------

@@ -16,6 +16,7 @@
 
 package fmpp.tdd;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -140,7 +141,7 @@ public class TddUtil {
                 + clazz.getName());
         }
         try {
-            dl = (DataLoader) clazz.newInstance();
+            dl = (DataLoader) clazz.getDeclaredConstructor().newInstance(new Object[0]);
         } catch (InstantiationException exc) {
             throw new EvalException(
                     "Failed to create an instance of "
@@ -151,7 +152,27 @@ public class TddUtil {
                     "Failed to create an instance of "
                     + clazz.getName() + ": "
                     + exc);
-        }
+        } catch (IllegalArgumentException exc) {
+            throw new EvalException(
+                    "Failed to create an instance of "
+                    + clazz.getName() + ": "
+                    + exc);
+		} catch (InvocationTargetException exc) {
+            throw new EvalException(
+                    "Failed to create an instance of "
+                    + clazz.getName() + ": "
+                    + exc);
+		} catch (NoSuchMethodException exc) {
+            throw new EvalException(
+                    "Failed to create an instance of "
+                    + clazz.getName() + ": "
+                    + exc);
+		} catch (SecurityException exc) {
+            throw new EvalException(
+                    "Failed to create an instance of "
+                    + clazz.getName() + ": "
+                    + exc);
+		}
         return dl;
     }
 

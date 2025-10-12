@@ -300,7 +300,7 @@ public class Settings {
                             + "on 32 bits.");
                     }
                 }
-                return new Integer(i);                
+                return i;                
             }
             throw new SettingException(
                     "The setting value should be an integer number, but now "
@@ -315,7 +315,7 @@ public class Settings {
                 if (value.startsWith("+")) {
                     value = value.substring(1).trim();
                 }
-                return new Integer(Integer.parseInt(value));
+                return Integer.parseInt(value);
             } catch (NumberFormatException e) {
                 throw new SettingException(
                         "Not a valid integer number: " + value, e);
@@ -1049,7 +1049,7 @@ public class Settings {
      * Convenience method for setting an {@link Integer} value.
      */
     public void set(String name, int value) throws SettingException {
-        set(name, new Integer(value));
+        set(name, Integer.valueOf(value));
     }
 
     /**
@@ -1072,7 +1072,7 @@ public class Settings {
      * Convenience method for setting an {@link Integer} value; see {@link #setDefault(String, Object)}.
      */
     public void setDefault(String name, int value) throws SettingException {
-        setDefault(name, new Integer(value));
+        setDefault(name, Integer.valueOf(value));
     }
 
     /**

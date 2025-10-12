@@ -144,7 +144,7 @@ public class LoggerProgressListener implements ProgressListener {
                 fmppVersion = "??? (" + e + ")";
             }
             try {
-                freemarkerVersion = Engine.getFreeMarkerVersionNumber();
+                freemarkerVersion = Engine.getFreeMarkerVersion().toString();
             } catch (Throwable e) {
                 freemarkerVersion = "??? (" + e + ")";
             }

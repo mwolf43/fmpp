@@ -1,6 +1,8 @@
 package fmpp.setting;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 import java.io.File;
 import java.util.Arrays;
@@ -8,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -261,7 +264,7 @@ public class SettingsTest {
             settings.set("num", "3");
             fail();
         } catch (SettingException e) {
-            assertThat(e.getMessage(), Matchers.containsString("string"));
+        	MatcherAssert.assertThat(e.getMessage(), Matchers.containsString("string"));
         }
         settings.setWithString("num", "3");
         assertEquals(3, settings.get("num"));

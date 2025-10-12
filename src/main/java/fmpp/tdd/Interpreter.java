@@ -1112,7 +1112,7 @@ public class Interpreter {
                             s2 = s;
                         }
                         try {
-                            return new Integer(s2); //!
+                            return Integer.valueOf(s2); //!
                         } catch (NumberFormatException exc) {
                             ; // ignore
                         }
